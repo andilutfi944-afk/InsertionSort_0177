@@ -9,7 +9,6 @@ void input (){ //procedure input
         cout << "Masukan Jumlah Data Pada Array : ";
         cin >> n;
 
-
         if (n <= 20){
             break;
         }
@@ -17,6 +16,36 @@ void input (){ //procedure input
             cout << "\nArray Tidak Boleh Lebih dari 20\n";
         }
     }
-    
+    cout << endl;
+    cout << "=======================================";
+    cout << "=========Masukan Element Array=========";
+    cout << "=======================================" << endl;
+
+    for (int i = 0; i < n; i++ ){
+        cout << "Data ke-" << (i+1) << ": ";
+        cin >> arr[i];
+    }
 }
 
+void insertionsort()
+{ // procedure insertion sort
+    int temp;
+    int j;
+
+    for (int i = 0; i < n; i++)
+    {
+        temp = arr[i];
+        j = i - 1;
+        while (j >= 0 && arr[j] > temp)
+        {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = temp;
+        cout << "\nStep " << i << ": ";
+        for (int k = 0; k < n; k++)
+        {
+            cout << arr[k] << " ";
+        }
+    }
+}
